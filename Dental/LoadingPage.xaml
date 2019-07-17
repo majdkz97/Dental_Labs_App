@@ -1,0 +1,65 @@
+﻿<Window x:Class="Dental.PL.LoadingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dental"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="752.801" Width="1226.412" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#FF87F3E2" HorizontalAlignment="Left" Height="360" Stroke="Black" VerticalAlignment="Top" Width="537" Margin="673,361,0,0"/>
+
+        <Rectangle Fill="#FFE78E75" HorizontalAlignment="Left" Height="360" Stroke="Black" VerticalAlignment="Top" Width="537" Margin="1,361,0,0"/>
+
+        <Rectangle Fill="#FFEEF387" HorizontalAlignment="Left" Height="360" Stroke="Black" VerticalAlignment="Top" Width="537" Margin="673,5,0,0"/>
+
+        <Rectangle Fill="#FF042B3F" HorizontalAlignment="Left" Height="360" Stroke="Black" VerticalAlignment="Top" Width="537"/>
+        <Button x:Name="button" Content="اضافة دكتور" HorizontalAlignment="Left" Margin="399,111,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="اضافة مريض" HorizontalAlignment="Left" Margin="363,46,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button2" Content="اضافة نوع قطعة" HorizontalAlignment="Left" Margin="24,138,0,0" VerticalAlignment="Top" Width="95" Click="button2_Click"/>
+        <Button x:Name="button3" Content="اضافة موظف" HorizontalAlignment="Left" Margin="399,209,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click" RenderTransformOrigin="0.51,1.334"/>
+        <Button x:Name="button4" Content="اضافة مرحلة" HorizontalAlignment="Left" Margin="296,276,0,0" VerticalAlignment="Top" Width="102" Click="button4_Click"/>
+        <Button x:Name="button5" Content="اضافة مادة" HorizontalAlignment="Left" Margin="66,265,0,0" VerticalAlignment="Top" Width="120" Click="button5_Click"/>
+        <Button x:Name="button6" Content="اضافة فاتورة" HorizontalAlignment="Left" Margin="86,56,0,0" VerticalAlignment="Top" Width="75" Click="button6_Click"/>
+        <Button x:Name="button7" Content="اضافة طلبية" HorizontalAlignment="Left" Margin="232,51,0,0" VerticalAlignment="Top" Width="75" Click="button7_Click"/>
+        <Button x:Name="button8" Content="اضافة تفاصيل طلبية" HorizontalAlignment="Left" Margin="130,138,0,0" VerticalAlignment="Top" Width="120" Click="button8_Click"/>
+        <Button x:Name="button9" Content="اضافة مرحلة العمل" HorizontalAlignment="Left" Margin="296,162,0,0" VerticalAlignment="Top" Width="97" Click="button9_Click"/>
+        <Button x:Name="button10" Content="اضافة تفاصيل قطعة" HorizontalAlignment="Left" Margin="75,200,0,0" VerticalAlignment="Top" Width="111" Click="button10_Click"/>
+        <Button x:Name="button11" Content="تعديل الفاتورة" HorizontalAlignment="Left" Margin="765,56,0,0" VerticalAlignment="Top" Width="75" Click="button11_Click"/>
+        <Button x:Name="button12" Content="حذف فاتورة" HorizontalAlignment="Left" Margin="35,411,0,0" VerticalAlignment="Top" Width="75" Click="button12_Click"/>
+        <Button x:Name="button13" Content="تعديل طلبية" HorizontalAlignment="Left" Margin="921,56,0,0" VerticalAlignment="Top" Width="75" Click="button13_Click"/>
+        <Button x:Name="button14" Content="تعديل مريض" HorizontalAlignment="Left" Margin="1065,51,0,0" VerticalAlignment="Top" Width="75" Click="button14_Click"/>
+        <Button x:Name="button16" Content="تعديل نوع قطعة" HorizontalAlignment="Left" Margin="736,162,0,0" VerticalAlignment="Top" Width="104" Click="button16_Click"/>
+        <Button x:Name="button15" Content="تعديل تفاصيل طلبية" HorizontalAlignment="Left" Margin="860,162,0,0" VerticalAlignment="Top" Width="110" Click="button15_Click"/>
+        <Button x:Name="button17" Content="تعديل دكتور" HorizontalAlignment="Left" Margin="1104,147,0,0" VerticalAlignment="Top" Width="75" Click="button17_Click"/>
+        <Button x:Name="button18" Content="تعديل مرحلة عمل" HorizontalAlignment="Left" Margin="975,209,0,0" VerticalAlignment="Top" Width="129" Click="button18_Click"/>
+        <Button x:Name="button19" Content="تعديل موظف" HorizontalAlignment="Left" Margin="1104,267,0,0" VerticalAlignment="Top" Width="75" Click="button19_Click"/>
+        <Button x:Name="button20" Content="تعديل مرحلة" HorizontalAlignment="Left" Margin="996,267,0,0" VerticalAlignment="Top" Width="75" Click="button20_Click"/>
+        <Button x:Name="button21" Content="تعديل مادة" HorizontalAlignment="Left" Margin="840,286,0,0" VerticalAlignment="Top" Width="75" Click="button21_Click"/>
+        <Button x:Name="button22" Content="تعديل تفاصيل قطعة" HorizontalAlignment="Left" Margin="779,228,0,0" VerticalAlignment="Top" Width="136" Click="button22_Click"/>
+        <Button x:Name="button23" Content="حذف طلبية" HorizontalAlignment="Left" Margin="193,411,0,0" VerticalAlignment="Top" Width="75" Click="button23_Click"/>
+        <Button x:Name="button24" Content="حذف مريض" HorizontalAlignment="Left" Margin="375,411,0,0" VerticalAlignment="Top" Width="75" Click="button24_Click"/>
+        <Button x:Name="button25" Content="حذف دكتور" HorizontalAlignment="Left" Margin="434,494,0,0" VerticalAlignment="Top" Width="75" Click="button25_Click"/>
+        <Button x:Name="button26" Content="حذف موظف" HorizontalAlignment="Left" Margin="434,580,0,0" VerticalAlignment="Top" Width="75" Click="button26_Click"/>
+        <Button x:Name="button27" Content="حذف مرحلة" HorizontalAlignment="Left" Margin="323,619,0,0" VerticalAlignment="Top" Width="75" Click="button27_Click"/>
+        <Button x:Name="button28" Content="حذف مادة" HorizontalAlignment="Left" Margin="158,619,0,0" VerticalAlignment="Top" Width="75" Click="button28_Click"/>
+        <Button x:Name="button29" Content="حذف نوع قطعة" HorizontalAlignment="Left" Margin="22,512,0,0" VerticalAlignment="Top" Width="97" Click="button29_Click"/>
+        <Button x:Name="button30" Content="حذف تفاصيل قطعة" HorizontalAlignment="Left" Margin="100,548,0,0" VerticalAlignment="Top" Width="101" Click="button30_Click"/>
+        <Button x:Name="button31" Content="حذف تفاصيل طلبية" HorizontalAlignment="Left" Margin="158,511,0,0" VerticalAlignment="Top" Width="110" Click="button31_Click"/>
+        <Button x:Name="button32" Content="حذف مرحلة عمل" HorizontalAlignment="Left" Margin="296,516,0,0" VerticalAlignment="Top" Width="102" Click="button32_Click"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="814,367,0,0" VerticalAlignment="Top" Height="343" Width="396"/>
+        <Button x:Name="button33" Content="جلب مرضى"  HorizontalAlignment="Left" Margin="690,387,0,0" VerticalAlignment="Top" Width="75" Click="button33_Click"/>
+        <Button x:Name="button34" Content="جلب فواتير" HorizontalAlignment="Left" Margin="690,667,0,0" VerticalAlignment="Top" Width="75" Click="button34_Click"/>
+        <Button x:Name="button35" Content="جلب أنواع قطع" HorizontalAlignment="Left" Margin="690,483,0,0" VerticalAlignment="Top" Width="75" Click="button35_Click"/>
+        <Button x:Name="button36" Content="جلب الدكاترة" HorizontalAlignment="Left" Margin="690,411,0,0" VerticalAlignment="Top" Width="75" Click="button36_Click"/>
+        <Button x:Name="button37" Content="جلب الطلبيات" HorizontalAlignment="Left" Margin="690,691,0,0" VerticalAlignment="Top" Width="75" Click="button37_Click"/>
+        <Button x:Name="button38" Content="جلب الموظفين" HorizontalAlignment="Left" Margin="690,435,0,0" VerticalAlignment="Top" Width="75" Click="button38_Click"/>
+        <Button x:Name="button39" Content="جلب المراحل" HorizontalAlignment="Left" Margin="690,459,0,0" VerticalAlignment="Top" Width="75" Click="button39_Click"/>
+        <Button x:Name="button40" Content="جلب مواد" HorizontalAlignment="Left" Margin="690,643,0,0" VerticalAlignment="Top" Width="75" Click="button40_Click"/>
+        <Button x:Name="button41" Content="جلب مراحل العمل" HorizontalAlignment="Left" Margin="680,585,0,0" VerticalAlignment="Top" Width="98" Click="button41_Click" RenderTransformOrigin="0.31,0.344"/>
+        <Button x:Name="button42" Content="جلب تفاصيل قطع" HorizontalAlignment="Left" Margin="685,533,0,0" VerticalAlignment="Top" Width="93" Click="button42_Click"/>
+        <Button x:Name="button43" Content="جلب تفاصيل فواتير" HorizontalAlignment="Left" Margin="680,557,0,0" VerticalAlignment="Top" Width="121" Click="button43_Click"/>
+        <Button x:Name="button44" Content="الواجهة" HorizontalAlignment="Left" Margin="570,62,0,0" VerticalAlignment="Top" Width="75" Click="button44_Click"/>
+
+    </Grid>
+</Window>
