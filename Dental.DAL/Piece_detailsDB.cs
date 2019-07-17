@@ -117,13 +117,13 @@ namespace Dental.DAL
                 sql.ConnectionString = ConnectionString.connectionString;
                 sql.Open();
                 //select query ITEM_DETAILS. QUINTITY
-                string selectItems_detailsQuery = @"SELECT Piece_details.ID AS ID , Piece_details.QUINTITY AS ITEM_DETAILS_QUINTITY , Piece_details.Piece_type_ID AS ITEM_ID , Piece_details.order_id AS  order_ID FROM Piece_details  , Piece_type , ORDERR WHERE Piece_details.Piece_type_ID=Piece_type.ID AND Piece_details.ORDERID = ORDERR.ID";
+                string selectItems_detailsQuery = @"SELECT Piece_details.ID AS ID , Piece_details.QUINTITY AS ITEM_DETAILS_QUINTITY , Piece_details.Piece_type_ID AS ITEM_ID , Piece_details.order_id AS  order_ID FROM Piece_details  , Piece_type , ORDERR WHERE Piece_details.Piece_type_ID=Piece_type.ID AND Piece_details.ORDER_ID = ORDERR.ID";
                 cmd.CommandText = selectItems_detailsQuery;
                 cmd.Connection = sql;
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    // create patient
+
                     Piece_details item_details = new Piece_details();
                     item_details.id = int.Parse(reader["ID"].ToString());
                     item_details.quintity = int.Parse(reader["ITEM_DETAILS_QUINTITY"].ToString());                   
@@ -157,7 +157,61 @@ namespace Dental.DAL
 
         }
 
+        public static List<Piece_details> selectPiece_details_ByOrderId(int id)
+        {
+            SQLiteConnection sql = new SQLiteConnection();
+            SQLiteCommand cmd = new SQLiteCommand();
+            SQLiteDataReader reader;
+            //List*************
+            List<Piece_details> items_details = new List<Piece_details>();
 
+            try
+            {
+
+
+                sql.ConnectionString = ConnectionString.connectionString;
+                sql.Open();
+                //select query ITEM_DETAILS. QUINTITY
+                string selectItems_detailsQuery = String.Format(@"SELECT Piece_details.ID AS ID ,piece_type.name as PIECE_TYPE_NAME,  Piece_details.QUINTITY AS ITEM_DETAILS_QUINTITY , Piece_details.Piece_type_ID AS ITEM_ID , Piece_details.order_id AS  order_ID FROM Piece_details  , Piece_type , ORDERR WHERE Piece_details.Piece_type_ID=Piece_type.ID ANd Piece_details.ORDER_ID = ORDERR.ID AND  Piece_details.ORDER_ID = {0}", id);
+                cmd.CommandText = selectItems_detailsQuery;
+                cmd.Connection = sql;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    Piece_details item_details = new Piece_details();
+                    item_details.id = int.Parse(reader["ID"].ToString());
+                    item_details.quintity = int.Parse(reader["ITEM_DETAILS_QUINTITY"].ToString());
+                    Piece_type item = new Piece_type();
+                    item.id = int.Parse(reader["ITEM_ID"].ToString());
+                    item.name = reader["PIECE_TYPE_NAME"].ToString();
+                    item_details.item = item;
+                    Order order_details = new Order();
+                    order_details.id = int.Parse(reader["ORDER_ID"].ToString());
+                    item_details.order = order_details;
+
+
+
+                    items_details.Add(item_details);
+                }
+                reader.Close();
+                System.Windows.Forms.MessageBox.Show("Selected");
+
+            }
+
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                sql.Close();
+
+            }
+            return items_details;
+
+        }
 
     }
 }

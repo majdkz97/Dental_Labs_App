@@ -21,10 +21,17 @@ namespace Dental.PL
     /// </summary>
     public partial class WindowOrderDetails : Window
     {
-        public WindowOrderDetails()
+        public WindowOrderDetails(int id)
         {
             InitializeComponent();
-             
+            Refresh_DataGrid_EditDelete(id);
+        }
+        int k = 0;
+        List<Piece_details> piece_Details;
+        private void Refresh_DataGrid_EditDelete(int order_id)
+        {
+            piece_Details = Piece_detailsDB.selectPiece_details_ByOrderId(order_id);
+            DataGridOrder_Pieces.ItemsSource = piece_Details;
         }
 
         private void ComboBoxPieceType_DropDownOpened(object sender, EventArgs e)

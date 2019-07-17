@@ -29,6 +29,9 @@ namespace Dental.PL
         }
         int k = 0;
         List<Order> items;
+        List<Order> newItems;
+
+
 
         private void Radio3_Checked(object sender, RoutedEventArgs e)
         {
@@ -37,6 +40,7 @@ namespace Dental.PL
             Grid2.Visibility = Visibility.Hidden;
             Grid4.Visibility = Visibility.Hidden;
             Refresh_DataGrid_ViewSearch();
+            newItems = items;
         }
 
         private void Radio2_Checked(object sender, RoutedEventArgs e)
@@ -88,10 +92,10 @@ namespace Dental.PL
             Order p = new Order();
             p = items[DataGridEditDelete.SelectedIndex];
             DatePickerOrderDelEdit.Uid = p.id.ToString();
-            
+
             DatePickerOrderEdit.Text = p.date_register;
             DatePickerOrderDelEdit.Text = p.date_delivered;
-            
+
 
         }
 
@@ -168,7 +172,7 @@ namespace Dental.PL
         {
             int first = 0;
             int index = ComboBoxDoctor.SelectedIndex;
-            if(index == first)
+            if (index == first)
             {
                 GridAddDoctor.Visibility = Visibility.Visible;
             }
@@ -245,7 +249,7 @@ namespace Dental.PL
                 patient.name = TextBoxNamePatient.Text;
                 patient.age = int.Parse(TextBoxAgePatient.Text);
                 patient.number = TextBoxNotesPatient.Text;
-              
+
 
                 if (patient.name == "")
                 {
@@ -278,9 +282,9 @@ namespace Dental.PL
             Order order = new Order();
             Bill bill = new Bill();
             bill.id = 0;
-            order.bill=bill;
+            order.bill = bill;
 
-            order.date_register = DatePickerOrder.SelectedDate.Value.ToString("yyyy/MM/dd") ;
+            order.date_register = DatePickerOrder.SelectedDate.Value.ToString("yyyy/MM/dd");
 
             Doctor doctor = new Doctor();
             doctor.id = int.Parse(ComboBoxDoctor.SelectedValue.ToString());
@@ -312,7 +316,7 @@ namespace Dental.PL
             }
             else
             {
-                List<Order> newItems = new List<Order>();
+                newItems = new List<Order>();
                 foreach (var item in items)
                 {
                     if (item.doctor.name.Contains(search))
@@ -333,7 +337,7 @@ namespace Dental.PL
             }
             else
             {
-                List<Order> newItems = new List<Order>();
+                newItems = new List<Order>();
                 foreach (var item in items)
                 {
                     if (item.patient.name.Contains(search))
@@ -355,9 +359,9 @@ namespace Dental.PL
             else
             {
                 String d = DatePickerSearchRegister.Text;
-           //     d = Reverse(d);
+                //     d = Reverse(d);
 
-                List<Order> newItems = new List<Order>();
+                newItems = new List<Order>();
                 foreach (var item in items)
                 {
                     if (item.date_register.Contains(d))
@@ -382,7 +386,7 @@ namespace Dental.PL
                 String d = DatePickerSearchDelivered.Text;
 
 
-                List<Order> newItems = new List<Order>();
+                newItems = new List<Order>();
                 foreach (var item in items)
                 {
                     if (item.date_delivered.Contains(d))
@@ -402,17 +406,18 @@ namespace Dental.PL
         private void ButtonViewLastOrder_Click(object sender, RoutedEventArgs e)
         {
             Refresh_DataGrid_ViewSearch();
-            List<Order> newItems = new List<Order>();
+            newItems = new List<Order>();
             newItems.Add(items[items.Count - 1]);
             DataGridViewSearch.ItemsSource = newItems;
 
         }
         private void ButtonDetailsDG_Click(object sender, RoutedEventArgs e)
         {
-            WindowOrderDetails w = new WindowOrderDetails();
+            int id = DataGridViewSearch.SelectedIndex;
+            WindowOrderDetails w = new WindowOrderDetails(newItems[id].id);
             w.ShowDialog();
         }
 
-        
+
     }
 }

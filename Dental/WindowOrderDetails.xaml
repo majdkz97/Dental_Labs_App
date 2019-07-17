@@ -29,13 +29,12 @@
         <GroupBox Grid.Column="0" Margin="10"
   Header="القطع ضمن الطلبية"
   >
-            <DataGrid    x:Name="DataGridViewSearch"  CanUserSortColumns="False"  AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid    x:Name="DataGridOrder_Pieces"  CanUserSortColumns="False"  AutoGenerateColumns="False" IsReadOnly="True" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="رقم القطعة" Binding="{Binding id}" />
-                    <DataGridTextColumn Header="نوع القطعة" Binding="{Binding doctor.name}" />
-                    <DataGridTextColumn Header="مواد القطعة" Binding="{Binding patient.name}" />
-                    <DataGridTextColumn Header="الكمية" Binding="{Binding date_register}" />
-                     <DataGridTemplateColumn>
+                    <DataGridTextColumn Header="نوع القطعة" Binding="{Binding item.name}" />
+                    <DataGridTextColumn Header="الكمية" Binding="{Binding quintity}" />
+                    <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -43,7 +42,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Button    Name="ButtonDetailsDG" Width="50" HorizontalAlignment="Center" Content="حذف">
+                                    <Button    Name="ButtonDetailsDG" Width="70" HorizontalAlignment="Center" Content="حذف">
 
                                     </Button>
 
