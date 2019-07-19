@@ -25,13 +25,24 @@ namespace Dental.PL
         {
             InitializeComponent();
             Refresh_DataGrid_EditDelete(id);
+            itemswrk = new List<Work_level>();
+
         }
         int k = 0;
         List<Piece_details> piece_Details;
+        List<Work_level> itemswrk;
+
         private void Refresh_DataGrid_EditDelete(int order_id)
         {
             piece_Details = Piece_detailsDB.selectPiece_details_ByOrderId(order_id);
             DataGridOrder_Pieces.ItemsSource = piece_Details;
+        }
+        private void Refresh_DataGrid_WorkLevel()
+        {
+            List<Work_level> work_Levels = new List<Work_level>();
+            work_Levels = itemswrk;
+            DataGridWorkLevel.ItemsSource = null;
+            DataGridWorkLevel.ItemsSource = work_Levels;
         }
 
         private void ComboBoxPieceType_DropDownOpened(object sender, EventArgs e)
@@ -55,16 +66,46 @@ namespace Dental.PL
         }
         private void ComboBoxEmployee_DropDownOpened(object sender, EventArgs e)
         {
-            
+            List<Employee> emps = new List<Employee>();
+            List<Work_level> work_Levels = new List<Work_level>();
+            work_Levels = Work_levelDB.SelectWork_levelIdFound(int.Parse(ComboBoxLevel.SelectedValue.ToString()));
+            foreach( var x in work_Levels)
+            {
+
+                emps.Add(x.employee);
+            }
+            ComboBoxEmployee.ItemsSource = emps;
+            ComboBoxEmployee.SelectedValuePath = "id";
+            ComboBoxEmployee.DisplayMemberPath = "name";
+
 
         }
+
+
 
 
        
 
         private void ButtonAddWorkLevel_Click(object sender, RoutedEventArgs e)
         {
+            List<Work_level> work_Levels = Work_levelDB.SelectWork_levelId_EmployeeID(int.Parse(ComboBoxLevel.SelectedValue.ToString()), int.Parse(ComboBoxEmployee.SelectedValue.ToString()));
+            Work_level work_Level = work_Levels[0];
+            itemswrk.Add(work_Level);
+            Refresh_DataGrid_WorkLevel();
 
+        }
+
+        private void ButtonAddPiece_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void ComboBoxLevel_DropDownOpened(object sender, EventArgs e)
+        {
+            List<Level> levels = new List<Level>();
+            levels = LevelDB.selectLevels();
+            ComboBoxLevel.ItemsSource = levels;
+            ComboBoxLevel.SelectedValuePath = "id";
+            ComboBoxLevel.DisplayMemberPath = "name";
         }
     }
 }

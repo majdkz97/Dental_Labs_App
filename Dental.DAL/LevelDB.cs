@@ -135,7 +135,6 @@ namespace Dental.DAL
                     levels.Add(level);
                 }
                 reader.Close();
-                System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 
