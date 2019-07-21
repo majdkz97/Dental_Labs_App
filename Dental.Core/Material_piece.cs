@@ -11,8 +11,9 @@ namespace Dental.Core
         public int id { get; set; }
         public Material material { get; set; }
         public Piece_details piece_details { get; set; }
-       
 
-        
+        public double wieght { get; set; }
+
+
     }
 }

@@ -25,7 +25,7 @@ namespace Dental.DAL
                 cmd.CommandText = insertWork_levelQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Added");
+                //System.Windows.Forms.MessageBox.Show("Added");
 
             }
 
@@ -55,7 +55,7 @@ namespace Dental.DAL
                 cmd.CommandText = updateorder_detailsQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Updated");
+                //System.Windows.Forms.MessageBox.Show("Updated");
 
             }
 
@@ -85,7 +85,7 @@ namespace Dental.DAL
                 cmd.CommandText = deletework_levelQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Deleted");
+                //System.Windows.Forms.MessageBox.Show("Deleted");
 
             }
 
@@ -114,7 +114,7 @@ namespace Dental.DAL
                 sql.ConnectionString = ConnectionString.connectionString;
                 sql.Open();
                 string selectwork_levelQuerry = String.Format(@"select work_level_piece.id as ID ,work_level_piece.work_level_id as work_level_id , employee.name as employee_name , level.name as level_name
-from work_level,work_level_piece,employee,level where piece_id = {0} and level.id = work_level.level_id and work_level.employee_id = employee.id and work_level_piece.work_level_id = work_level.id ", piece_id);
+from work_level,work_level_piece,employee,level where piece_details_id = {0} and level.id = work_level.level_id and work_level.employee_id = employee.id and work_level_piece.work_level_id = work_level.id ", piece_id);
                 cmd.CommandText = selectwork_levelQuerry;
                 cmd.Connection = sql;
                 reader = cmd.ExecuteReader();
@@ -137,7 +137,7 @@ from work_level,work_level_piece,employee,level where piece_id = {0} and level.i
 
                     
                 }
-                System.Windows.Forms.MessageBox.Show("sss");
+                //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 

@@ -73,9 +73,9 @@
                 </Grid.RowDefinitions>
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="445*" />
+                        <ColumnDefinition Width="1.7*" />
 
-                        <ColumnDefinition Width="261*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <DataGrid Grid.Column="0" 
                               x:Name="DataGridWorkLevel" 
@@ -118,7 +118,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <GroupBox Grid.Row="0"  Margin="10"
-  Header="إضافة مرحلة للقطعة"
+  Header="إضافة مرحلة"
   >
                             <StackPanel Name="StackPanelWorkLevelAdd">
                                 <TextBlock HorizontalAlignment="Center">تحديد المرحلة</TextBlock>
@@ -144,10 +144,10 @@
 
                                 <TextBlock HorizontalAlignment="Center">تحديد النوع</TextBlock>
 
-                                <ComboBox Name="ComboBoxPieceType" DropDownOpened="ComboBoxPieceType_DropDownOpened_1">
+                                <ComboBox Name="ComboBoxPieceType" DropDownOpened="ComboBoxPieceType_DropDownOpened">
                                 </ComboBox>
 
-                                <TextBox Name="TextBoxPricePiece"
+                                <TextBox Name="TextBoxPieceQuintity"
   materialDesign:HintAssist.Hint="الكمية"   Margin="0,20,0,0"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
@@ -180,19 +180,19 @@
                 </Grid.RowDefinitions>
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="240*" />
+                        <ColumnDefinition Width="*" />
 
-                        <ColumnDefinition Width="233*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <DataGrid Grid.Column="0" 
-                              x:Name="DataGridPricesMaterial" 
+                              x:Name="DataGridMaterials" 
                               CanUserSortColumns="False" 
                                       HorizontalAlignment="Left"
                                       AutoGenerateColumns="False"
-                                      IsReadOnly="True" Width="152"   >
+                                      IsReadOnly="True"    >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="الاسم" Binding="{Binding employee.name}" />
-                            <DataGridTextColumn Header="السعر" Binding="{Binding price}" />
+                            <DataGridTextColumn Header="المادة" Binding="{Binding material.name}" />
+                            <DataGridTextColumn Header="الوزن" Binding="{Binding wieght}" />
 
 
                             <DataGridTemplateColumn >
@@ -204,8 +204,10 @@
 
                                             </Grid.ColumnDefinitions>
 
-                                            <Button Name="ButtonEditWorkLevelDG" Click="ButtonEditWorkLevelDG_Click" Content="تعديل"  Width="100"  ></Button>
+                                            <Button    Name="ButtonDetailsDG"  HorizontalAlignment="Center">
+                                                <materialDesign:PackIcon Kind="DeleteForever" />
 
+                                            </Button>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -227,17 +229,30 @@
                                 <TextBlock HorizontalAlignment="Center">تحديد المادة</TextBlock>
                                 <ComboBox Name="ComboBoxMaterial" DropDownOpened="ComboBoxMaterial_DropDownOpened">
                                 </ComboBox>
+                                <TextBox Name="TextBoxMaterialWieght"
+  materialDesign:HintAssist.Hint="الوزن"   Margin="0,20,0,0"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
 
-
-                                <Button Name="ButtonAddMaterial" Click="ButtonAddWorkLevel_Click" Width="100" HorizontalAlignment="Center" Margin="0,20,0,0" Content="إضافة">
+                                <Button Name="ButtonAddMaterial" Click="ButtonAddMaterial_Click" Width="100" HorizontalAlignment="Center" Margin="0,20,0,0" Content="إضافة">
                                 </Button>
 
                             </StackPanel>
 
 
                         </GroupBox>
-                        <Button Grid.Row="1" Name="ButtonAddPiece" Click="ButtonAddPiece_Click" Width=" 120" Height="50" Content="إضافة القطعة" ></Button>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button  Grid.Row="2" Name="ButtonAddPiece" Click="ButtonAddPiece_Click" Width=" 120" Height="50" Content="إضافة القطعة" ></Button>
+                            <Button Grid.Row="3" Name="ButtonCloseWindow" Click="ButtonCloseWindow_Click" Width=" 120" Height="50" Content="إغلاق" ></Button>
+
+                        </Grid>
 
                     </Grid>
 

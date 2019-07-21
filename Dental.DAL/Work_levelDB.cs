@@ -25,7 +25,7 @@ namespace Dental.DAL
                 cmd.CommandText = insertWork_levelQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Added");
+                //System.Windows.Forms.MessageBox.Show("Added");
 
             }
 
@@ -55,7 +55,7 @@ namespace Dental.DAL
                 cmd.CommandText = updateorder_detailsQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Updated");
+                //System.Windows.Forms.MessageBox.Show("Updated");
 
             }
 
@@ -85,7 +85,7 @@ namespace Dental.DAL
                 cmd.CommandText = deletework_levelQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Deleted");
+                //System.Windows.Forms.MessageBox.Show("Deleted");
 
             }
 
@@ -131,7 +131,7 @@ namespace Dental.DAL
  
                     Work_levels.Add(work_level);
                 }
-               // System.Windows.Forms.MessageBox.Show("sss");
+               // //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 
@@ -182,7 +182,7 @@ namespace Dental.DAL
 
                     Work_levels.Add(work_level);
                 }
-                // System.Windows.Forms.MessageBox.Show("sss");
+                // //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 
@@ -250,7 +250,7 @@ namespace Dental.DAL
                     Work_levels.Add(work_level);
                 }
                 reader.Close();
-                System.Windows.Forms.MessageBox.Show("Selected");
+                //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 

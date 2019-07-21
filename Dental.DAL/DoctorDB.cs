@@ -24,7 +24,7 @@ namespace Dental.DAL
                 cmd.CommandText = insertDoctorQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Added");
+            //    //System.Windows.Forms.MessageBox.Show("Added");
 
             }
 
@@ -56,7 +56,7 @@ namespace Dental.DAL
                 cmd.CommandText = updatedoctorQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Updated");
+                //System.Windows.Forms.MessageBox.Show("Updated");
 
             }
 
@@ -86,7 +86,7 @@ namespace Dental.DAL
                 cmd.CommandText = deletedoctortQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Deleted");
+                //System.Windows.Forms.MessageBox.Show("Deleted");
 
             }
 
@@ -137,7 +137,7 @@ namespace Dental.DAL
                     doctors.Add(doctor);
                 }
                 reader.Close();
-              //  System.Windows.Forms.MessageBox.Show("Selected");
+              //  //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 

@@ -28,7 +28,7 @@ namespace Dental.DAL
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
 
-                System.Windows.Forms.MessageBox.Show("Added");
+                //System.Windows.Forms.MessageBox.Show("Added");
 
             }
 
@@ -60,7 +60,7 @@ namespace Dental.DAL
                 cmd.CommandText = updateorderQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Updated");
+                //System.Windows.Forms.MessageBox.Show("Updated");
 
             }
 
@@ -90,7 +90,7 @@ namespace Dental.DAL
                 cmd.CommandText = deleteorderQuerry;
                 cmd.Connection = sql;
                 cmd.ExecuteNonQuery();
-                System.Windows.Forms.MessageBox.Show("Deleted");
+                //System.Windows.Forms.MessageBox.Show("Deleted");
 
             }
 
@@ -152,7 +152,7 @@ namespace Dental.DAL
                     orders.Add(order);
                 }
                 reader.Close();
-                System.Windows.Forms.MessageBox.Show("Selected");
+                //System.Windows.Forms.MessageBox.Show("Selected");
 
             }
 
